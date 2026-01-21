@@ -1,0 +1,1329 @@
+/* ==========================================
+   ¡NUEVO! DEFINICIÓN DE FUENTES
+   ========================================== */
+
+@font-face {
+    font-family: 'BirdCharms Sans';
+    src: url('Fonts/CormorantGaramond.woff2') format('woff2'),
+         url('Fonts/CormorantGaramond.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; 
+}
+
+@font-face {
+    font-family: 'BirdCharms Script';
+    src: url('Fonts/Amoresa.woff2') format('woff2'),
+         url('Fonts/Amoresa.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; 
+}
+
+
+/* ==========================================
+   ESTILOS GENERALES Y VARIABLES
+   ========================================== */
+
+:root {
+    /* --- PALETA DE COLORES PERSONALIZADA --- */
+    --c-off-white: #fdfbf2;    /* 253, 251, 242 */
+    --c-beige:     #fff9f0;    /* beige casi blanco */
+    --c-olive:     #d4c4b0;    /* 172, 173, 146 */
+    --c-yellow:    #e4ddcd;    /* 251, 241, 184 */
+    --c-dark-text: #2c2c2c;    /* Texto oscuro base */
+
+    /* --- ASIGNACIÓN DE VARIABLES --- */
+    --color-accent: var(--c-olive); 
+    --color-bg-main: var(--c-off-white);
+    --color-bg-secondary: var(--c-beige); 
+    --color-text: var(--c-dark-text);
+
+    /* Fuentes */
+    --font-script: 'BirdCharms Script', cursive;
+    --font-sans: 'BirdCharms Sans', sans-serif;
+    --font-body: 'Georgia', 'Times New Roman', serif;
+}
+
+/* Reset y configuración base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-text);
+    background-color: var(--color-bg-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.section {
+    padding: 60px 0;
+    position: relative;
+}
+
+/* ==========================================
+   SECCIÓN LANDING / HOME
+   ========================================== */
+
+.landing-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: var(--color-bg-main);
+    
+    /* LÍNEAS VERTICALES (PINSTRIPES) */
+    background-image: repeating-linear-gradient(
+        90deg,
+        var(--color-bg-main),
+        var(--color-bg-main) 20px,
+        var(--color-accent) 20px,
+        var(--color-accent) 21px
+    );
+    background-size: 100% 100%; 
+}
+
+.landing-content {
+    background-color: var(--color-bg-main);
+    padding: 150px 250px;
+    text-align: center;
+    position: relative;
+    border: 6px solid var(--color-text);
+    max-width: 2000px;
+    margin: 0 auto;
+}
+
+.landing-content::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border: 1px solid var(--color-text);
+    pointer-events: none;
+}
+
+.couple-names {
+    font-family: var(--font-script);
+    font-size: 5.5rem;
+    color: var(--color-accent);
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    line-height: 1.3;
+    opacity: 90%;
+    transform: rotate(-3deg);
+    display: inline-block;
+}
+
+.couple-names br {
+    display: none;
+}
+
+.dove {
+    width: 150px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.85;
+}
+
+.dove-left {
+    left: 40px;
+}
+
+.dove-right {
+    right: 40px;
+}
+
+.subtitle {
+    font-family: var(--font-sans); 
+    font-size: 1.8rem; 
+    letter-spacing: 5px;
+    margin: 30px 0;
+    text-transform: uppercase;
+    font-weight: normal; 
+}
+
+.cta-button {
+    background-color: transparent;
+    border: 2px solid var(--color-text);
+    color: var(--color-text);
+    padding: 10px 35px;
+    font-size: 1rem; 
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: var(--font-sans); 
+    border-radius: 20px;
+    font-weight: normal;
+}
+
+.cta-button:hover {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-bg-main);
+}
+
+/* ==========================================
+   SECCIÓN INVITACIÓN
+   ========================================== */
+
+.invitation-section {
+    background-color: var(--color-bg-main);
+}
+
+.invitation-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.photo-frame {
+    background-color: transparent;
+    border: 3px solid var(--color-accent);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    position: relative;
+    border-radius:50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.couple-photo {
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    width: 105%; 
+    height: 105%; 
+    object-fit: cover; 
+    border-radius: 50%; 
+    display: block; 
+}
+
+.photo-frame::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 8px;
+}
+
+.photo-frame img {
+    width: 100%;
+    display: block;
+    border-radius: 5px;
+}
+
+.invitation-details {
+    text-align: center;
+}
+
+.intro-text {
+    font-family: var(--font-sans); 
+    font-size: 1rem; 
+    letter-spacing: 2px;
+    margin: 5px 0;
+}
+
+.event-day {
+    font-family: var(--font-script); 
+    font-size: 48px;
+    margin: 20px 0 10px 0;
+    font-weight: normal;
+}
+
+.event-date {
+    font-family: var(--font-script); 
+    font-size: 3.5rem; 
+    margin: 10px 0;
+    font-weight: normal;
+    color: var(--color-accent);
+}
+
+.detail-icon {
+    width: 100px;
+    height: auto;
+    margin: 10px 0;
+}
+
+.venue-name {
+    font-family: var(--font-sans); 
+    font-size: 1.25rem; 
+    font-weight: normal;
+    letter-spacing: 2px;
+    margin: 20px 0 5px 0;
+}
+
+.venue-location {
+    font-family: var(--font-sans); 
+    font-size: 1rem; 
+    color: #666;
+}
+
+/* ==========================================
+   SECCIÓN NUESTRA HISTORIA
+   ========================================== */
+
+.story-section {
+    background-color: var(--color-accent); 
+    color: var(--color-bg-main); 
+    padding: 80px 0; 
+}
+
+.story-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center; 
+    gap: 50px; 
+}
+
+.story-section .section-title {
+    font-family: var(--font-script); 
+    font-size: 3.5rem; 
+    line-height: 1.2;
+    margin-bottom: 25px; 
+    font-weight: normal;
+}
+
+.story-text {
+    font-family: var(--font-sans); 
+    line-height: 1.8; 
+    font-size: 1.1rem; 
+}
+
+.story-text p + p {
+    margin-top: 25px;
+}
+
+.polaroid-photos {
+    position: relative; 
+    min-height: 450px; 
+    filter: grayscale(100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.polaroid {
+    background-color: white;
+    padding: 10px 10px 50px 10px; 
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    position: absolute; 
+}
+
+.polaroid:nth-child(1) {
+    transform: translate(-110px, -100px) rotate(-10deg); 
+    z-index: 2; 
+}
+
+.polaroid:nth-child(2) {
+    transform: translate(90px, -80px) rotate(8deg); 
+    z-index: 1;
+}
+
+.polaroid:nth-child(3) {
+    transform: translate(30px, 70px) rotate(12deg); 
+    z-index: 3;
+}
+
+.polaroid img {
+    width: 200px; 
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+/* ==========================================
+   SECCIÓN ITINERARIO
+   ========================================== */
+
+.itinerary-section {
+    background-color: var(--color-bg-secondary);
+}
+
+.section-ornament {
+    display: block;
+    margin: 0 auto 30px auto; 
+    width: 150px; 
+    opacity: 0.8; 
+}
+
+.itinerary-section .section-title {
+    text-align: center;
+    color: var(--color-text);
+    margin-bottom: 60px;
+    font-family: var(--font-script); 
+    font-weight: normal; 
+    font-size: 3rem; 
+    text-transform: capitalize; 
+}
+
+.timeline {
+    display: grid;
+    /* 5 Columnas para que esté equilibrado */
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 20px; 
+    max-width: 1000px;
+    margin: 0 auto;
+    justify-content: center; 
+}
+
+.timeline-item {
+    text-align: center;
+}
+
+.timeline-icon {
+    display: block;
+    margin: 0 auto 15px auto;
+    width: 150px;
+    height: 150px;
+    transition: transform 0.3s ease;
+}
+
+.timeline-item:hover .timeline-icon {
+    transform: scale(1.1);
+}
+
+.timeline-item h3 {
+    font-family: var(--font-sans); 
+    font-size: 1.8rem; 
+    margin-bottom: 8px;
+    color: var(--color-accent);
+    font-weight: normal;
+}
+
+.timeline-item p {
+    font-size: 14px; 
+    color: #666;
+    font-family: var(--font-sans); 
+}
+
+/* ==========================================
+   SECCIÓN INFORMACIÓN PARA INVITADOS
+   ========================================== */
+
+.info-section {
+    background-color: var(--color-bg-main);
+}
+
+.info-section .section-title {
+    text-align: center;
+    color: var(--color-text);
+    margin-bottom: 50px;
+    font-family: var(--font-script); 
+    font-weight: normal;
+    font-size: 3.5rem;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px; 
+    margin-bottom: 80px; 
+}
+
+.info-card {
+    background-color: var(--color-bg-secondary); 
+    border: 3px solid var(--color-accent);
+    border-radius: 25px 35px 30px 40px / 40px 30px 35px 25px;
+    transition: transform 0.3s ease;
+    padding: 50px 30px 30px 30px; 
+    position: relative; 
+    text-align: center; 
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+}
+
+.info-card::before {
+    content: '';
+    position: absolute;
+    top: -20px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px; 
+    height: 35px; 
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.card-header {
+    background-color: transparent; 
+    padding: 0;
+    text-align: center;
+    border-bottom: none; 
+}
+
+.card-icon {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+}
+
+.card-header h3 {
+    font-size: 2.5rem;
+    color: var(--color-accent);
+    font-family: var(--font-script); 
+    font-weight: normal;
+}
+
+.card-body {
+    padding: 0;
+    margin-top: 15px;
+}
+
+.card-body p {
+    line-height: 1.7;
+    color: #555;
+    font-size: 0.9rem; 
+    font-family: var(--font-sans); 
+}
+
+.card-body strong {
+    color: var(--color-text);
+}
+
+.card-body p + p {
+    margin-top: 10px; 
+}
+
+.hotel-list, .car-service {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--color-text);
+    font-family: var(--font-sans); 
+}
+
+/* ==========================================
+   ESTILOS PARA LINKS DE UBICACIÓN
+   ========================================== */
+
+.location-link {
+    text-decoration: none !important;
+    color: inherit !important;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    display: inline-block;
+}
+
+.location-link:hover {
+    color: var(--color-accent) !important; 
+}
+
+a[x-apple-data-detectors] {
+    color: inherit !important;
+    text-decoration: none !important;
+    font-size: inherit !important;
+    font-family: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+}
+
+/* --- Further Details --- */
+
+.striped-section {
+    padding: 60px 0;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 40px;
+    align-items: center; 
+}
+
+.striped-section-title {
+    grid-column: 1 / -1; 
+    text-align: center;
+    color: var(--color-text);
+    font-family: var(--font-script); 
+    font-weight: normal;
+    font-size: 3.5rem;
+    margin-bottom: 40px;
+}
+
+.detail-box {
+    padding: 40px 30px; 
+    text-align: center;
+    background-color: var(--color-accent); 
+    position: relative; 
+    border: 1px solid var(--color-accent);
+    border-radius: 4% 6% 5% 4% / 5% 4% 6% 5%;
+}
+
+.detail-box::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 3px solid var(--color-accent);
+    border-radius: 4% 6% 5% 4% / 5% 4% 6% 5%;
+}
+
+.detail-box h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--color-bg-main);
+    font-family: var(--font-script); 
+    font-weight: normal;
+}
+
+.detail-box p {
+    margin: 10px 0;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    color: var(--color-bg-secondary);
+    font-family: var(--font-sans); 
+}
+
+.cursive-detail {
+    font-family: var(--font-script); 
+    font-size: 1.8rem;
+    color: var(--color-bg-main); 
+    margin: 20px 0 !important;
+}
+
+.detail-box.center {
+    background: none;
+    border: none;
+    padding: 0;
+}
+.detail-box.center::before {
+    border: none;
+}
+
+.center-icon {
+    width: 180px; 
+    opacity: 0.7; 
+}
+
+/* ==========================================
+   SECCIÓN REGISTRO DE REGALOS (CORREGIDO)
+   ========================================== */
+
+.registry-section {
+    background-color: var(--color-bg-secondary);
+    text-align: center;
+}
+
+.section-icon {
+    width: 140px;
+    height: auto;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+/* TÍTULO PRINCIPAL "MESA DE REGALOS" EN CURSIVA */
+.registry-section .section-title {
+    color: var(--color-text);
+    margin-bottom: 30px;
+    font-family: var(--font-script); /* Tipografía Cursiva */
+    font-weight: normal;
+    font-size: 4rem; 
+}
+
+.registry-text {
+    max-width: 700px;
+    margin: 0 auto 50px auto;
+    line-height: 1.8;
+    font-size: 1.05rem; 
+    font-family: var(--font-sans); 
+    color: var(--color-text);
+}
+
+/* --- TARJETA BANCARIA ESTILO MENÚ --- */
+.bank-card {
+    background-color: var(--color-bg-main);
+    /* Borde doble fino y elegante */
+    border: 1px solid var(--color-accent);
+    outline: 1px solid var(--color-accent);
+    outline-offset: -6px; 
+    
+    padding: 50px 40px;
+    max-width: 550px;
+    margin: 0 auto;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border-radius: 0;
+}
+
+/* Subtítulo "Transferencia" en Cursiva */
+.bank-header h3 {
+    font-family: var(--font-script);
+    font-size: 3rem;
+    color: var(--color-accent);
+    margin: 0 0 10px 0;
+    font-weight: normal;
+}
+
+.divider-line {
+    height: 1px;
+    background-color: var(--color-accent);
+    width: 60px;
+    margin: 0 auto 30px auto;
+    opacity: 0.6;
+}
+
+/* GRID DE DATOS */
+.bank-grid {
+    display: grid;
+    grid-template-columns: 100px 1fr; /* Etiqueta | Dato */
+    gap: 15px 20px;
+    text-align: left;
+    align-items: baseline; 
+}
+
+/* Etiquetas (Banco, Titular) - Pequeñas y sutiles */
+.bank-label {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #888; /* Gris suave */
+    text-align: right; 
+}
+
+/* Valores (BBVA, Nombre) - SIN NEGRITAS, FINOS */
+.bank-value {
+    font-family: var(--font-sans);
+    font-size: 1.15rem;
+    color: var(--color-text);
+    font-weight: normal; /* Aquí quitamos lo "horrible" */
+    letter-spacing: 0.5px;
+}
+
+/* Fila especial para CLABE y botón */
+.clabe-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Botón Copiar Fino */
+.copy-btn {
+    background: transparent;
+    border: 1px solid var(--color-accent);
+    color: var(--color-accent);
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 6px 15px;
+    cursor: pointer;
+    border-radius: 0;
+    transition: all 0.3s ease;
+}
+
+.copy-btn:hover {
+    background-color: var(--color-accent);
+    color: var(--color-bg-main);
+}
+
+/* RESPONSIVE */
+@media (max-width: 500px) {
+    .bank-card {
+        padding: 40px 20px;
+        outline-offset: -4px;
+    }
+    .bank-grid {
+        grid-template-columns: 1fr; 
+        text-align: center;
+        gap: 10px;
+    }
+    .bank-label {
+        text-align: center;
+        margin-top: 15px;
+        font-size: 0.7rem;
+    }
+    .bank-value {
+        text-align: center;
+        font-size: 1.1rem;
+    }
+    .clabe-row {
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+
+/* ==========================================
+   SECCIÓN RSVP
+   ========================================== */
+
+.rsvp-section {
+    background-color: var(--color-bg-main); 
+    padding: 80px 20px;
+}
+
+.rsvp-section .section-title {
+    text-align: center;
+    color: var(--color-text);
+    margin-bottom: 20px; 
+    font-family: var(--font-script); 
+    font-weight: normal;
+    font-size: 3.5rem;
+}
+
+.rsvp-subtitle {
+    text-align: center;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    margin-bottom: 50px; 
+    color: #666;
+    text-transform: uppercase;
+    font-family: var(--font-sans); 
+}
+
+.rsvp-form {
+    background-color: var(--color-bg-secondary); 
+    padding: 40px;
+    position: relative;
+    border: 1px solid var(--color-accent);
+    border-radius: 25px 35px 30px 40px / 40px 30px 35px 25px; 
+    box-shadow: none; 
+    max-width: 700px; 
+    margin: 0 auto;
+}
+
+.rsvp-form::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 3px solid var(--color-accent);
+    border-radius: 25px 35px 30px 40px / 40px 30px 35px 25px; 
+    z-index: -1;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: normal;
+    color: var(--color-text);
+    font-size: 1rem; 
+    letter-spacing: 1px;
+    text-transform: uppercase; 
+    font-family: var(--font-sans); 
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-accent); 
+    border-radius: 3px; 
+    font-family: var(--font-body); 
+    font-size: 0.95rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; 
+    color: var(--color-text); 
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--c-dark-text); 
+    box-shadow: 0 0 0 2px rgba(172, 173, 146, 0.2); 
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.submit-button {
+    width: 100%;
+    background-color: var(--color-accent);
+    color: var(--color-bg-main);
+    border: none;
+    padding: 15px;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 3px; 
+    transition: all 0.3s ease;
+    font-family: var(--font-sans); 
+    font-weight: normal;
+    text-transform: uppercase; 
+}
+
+.submit-button:hover {
+    background-color: var(--c-dark-text);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.confirmation-message {
+    background-color: var(--color-bg-secondary); 
+    border: 2px solid var(--color-accent); 
+    color: var(--color-text); 
+    padding: 30px;
+    border-radius: 5px; 
+    text-align: center;
+    max-width: 600px; 
+    margin: 40px auto 0 auto; 
+}
+
+.confirmation-message h3 {
+    font-size: 2.5rem; 
+    margin-bottom: 15px;
+    color: var(--color-accent);
+    font-family: var(--font-script); 
+    font-weight: normal;
+}
+
+.confirmation-message p {
+    font-size: 1rem;
+    line-height: 1.6;
+    font-family: var(--font-sans); 
+}
+
+/* ==========================================
+   SECCIÓN CONTACTO
+   ========================================== */
+
+.contact-section {
+    background-color: var(--color-accent);
+    color: var(--color-bg-main); 
+    text-align: center;
+}
+
+.contact-section .section-icon {
+    filter: brightness(0) invert(1); 
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.contact-section .section-title {
+    color: var(--color-bg-main); 
+    font-family: var(--font-script); 
+    font-weight: normal;
+    font-size: 3.5rem;
+    margin-bottom: 25px;
+}
+
+.contact-text {
+    margin: 30px auto;
+    font-size: 1.1rem; 
+    line-height: 1.8;
+    max-width: 600px; 
+    font-family: var(--font-sans); 
+    text-transform: uppercase;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 40px;
+    max-width: 900px; 
+    margin: 40px auto 0 auto;
+}
+
+.contact-card {
+    background-color: transparent;
+    border: 3px solid var(--color-bg-main); 
+    border-radius: 45% 55% 60% 40% / 60% 40% 55% 45%;
+    padding: 35px 30px;
+    transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: scale(1.03); 
+}
+
+.contact-card h3 {
+    font-family: var(--font-script); 
+    font-weight: normal;
+    font-size: 2.5rem;
+    color: var(--color-bg-main);
+    margin-bottom: 20px;
+}
+
+.contact-card p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: var(--color-bg-main);
+    margin: 5px 0;
+    font-family: var(--font-sans); 
+}
+
+.phone-link {
+    color: inherit !important; /* Hereda el color crema del párrafo padre */
+    text-decoration: none !important; /* Sin subrayado */
+    cursor: pointer;
+    font-family: inherit; /* Asegura que use la misma fuente */
+}
+
+/* Opcional: Un pequeño cambio de opacidad al pasar el mouse/tocar */
+.phone-link:hover {
+    opacity: 0.8;
+}
+
+/* ==========================================
+   FOOTER & WATERMARK
+   ========================================== */
+
+.footer {
+    background-color: var(--c-beige); 
+    color: var(--c-dark-text);
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 1px solid var(--color-accent); 
+}
+
+.footer-names {
+    font-family: var(--font-script);
+    font-size: 1.5rem; 
+    margin-bottom: 5px;
+    color: var(--color-accent);
+}
+
+.footer-tagline {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    margin-bottom: 30px; 
+}
+
+/* ESTILOS DE TU MARCA */
+.watermark {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: 0.6rem; 
+    letter-spacing: 3px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 10px;
+    
+    /* COLORES MARCA */
+    color: var(--color-text) !important; 
+    transition: color 0.3s ease;
+}
+
+.watermark:hover {
+    color: #aaa !important; 
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media (max-width: 992px) {
+    .container {
+        padding: 40px 30px;
+    }
+    .landing-section {
+        background-size: 70px 70px;
+    }
+    .landing-content {
+        padding: 70px 80px;
+        max-width: 90%;
+        border: 5px solid var(--color-text);
+    }
+    .landing-content::before {
+        top: 12px;
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+    }
+    .couple-names {
+        font-size: 4.5rem;
+        transform: rotate(-2.5deg);
+    }
+    .dove {
+        width: 100px;
+    }
+    .dove-left {
+        left: 30px;
+    }
+    .dove-right {
+        right: 30px;
+        width: 120px;
+    }
+    .subtitle {
+        font-size: 1.5rem;
+        letter-spacing: 4px;
+    }
+    .invitation-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        text-align: center;
+    }
+    .photo-frame {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    .story-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .story-left-column {
+        text-align: center;
+    }
+    .polaroid-photos {
+        min-height: 400px;
+    }
+    .timeline {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+    .timeline-icon {
+        width: 100px;
+        height: 100px;
+    }
+    .timeline-item h3 {
+        font-size: 1.5rem;
+    }
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    .striped-section {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .detail-box.center {
+        margin: 20px 0;
+    }
+    .center-icon {
+        width: 120px;
+    }
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .section {
+        padding: 40px 0;
+    }
+    .container {
+        padding: 30px 20px;
+    }
+    .section-title,
+    .rsvp-section .section-title,
+    .contact-section .section-title,
+    .info-section .section-title,
+    .striped-section-title {
+        font-size: 2.5rem !important;
+    }
+    .landing-section {
+        background-size: 50px 50px;
+        padding: 30px 15px;
+    }
+    .landing-content {
+        padding: 70px 35px;
+        border: 4px solid var(--color-text);
+        max-width: 95%;
+    }
+    .landing-content::before {
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+    }
+    .couple-names {
+        font-size: 3.2rem;
+        transform: rotate(-2deg);
+        line-height: 1.2;
+    }
+    .dove {
+        width: 65px;
+        opacity: 0.8;
+    }
+    .dove-left {
+        left: 12px;
+    }
+    .dove-right {
+        right: 12px;
+        width: 75px;
+    }
+    .subtitle {
+        font-size: 1.1rem;
+        margin: 22px 0 28px 0;
+        letter-spacing: 3px;
+    }
+    .cta-button {
+        padding: 11px 32px;
+        font-size: 0.9rem;
+    }
+    .event-day {
+        font-size: 2.5rem;
+    }
+    .event-date {
+        font-size: 2.8rem;
+    }
+    .detail-icon {
+        width: 80px;
+    }
+    .story-text {
+        font-size: 1rem;
+    }
+    .polaroid-photos {
+        min-height: 350px;
+    }
+    .polaroid img {
+        width: 150px;
+        height: 150px;
+    }
+    .polaroid:nth-child(1) {
+        transform: translate(-70px, -80px) rotate(-10deg);
+    }
+    .polaroid:nth-child(2) {
+        transform: translate(60px, -60px) rotate(8deg);
+    }
+    .polaroid:nth-child(3) {
+        transform: translate(10px, 50px) rotate(12deg);
+    }
+    .timeline {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    .timeline-icon {
+        width: 80px;
+        height: 80px;
+    }
+    .timeline-item h3 {
+        font-size: 1.2rem;
+    }
+    .itinerary-section .section-title {
+        font-size: 2.2rem !important;
+        margin-bottom: 40px;
+    }
+    .section-ornament {
+        width: 100px;
+        margin-bottom: 20px;
+    }
+    .info-card {
+        padding: 40px 20px 20px 20px;
+    }
+    .card-header h3 {
+        font-size: 2rem;
+    }
+    .card-body p {
+        font-size: 0.85rem;
+    }
+    .hotel-list, .car-service {
+        font-size: 0.85rem;
+    }
+    .detail-box {
+        padding: 25px 20px;
+    }
+    .detail-box h3 {
+        font-size: 1.8rem;
+    }
+    .cursive-detail {
+        font-size: 1.5rem;
+    }
+    .center-icon {
+        width: 100px;
+    }
+    .registry-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .registry-button {
+        width: 100%;
+    }
+    .section-icon {
+        width: 100px;
+    }
+    
+    /* AJUSTE PARA LA NUEVA TARJETA EN MOVIL */
+    .bank-card {
+        padding: 40px 20px;
+        outline-offset: -4px;
+    }
+    .bank-grid {
+        grid-template-columns: 1fr; /* Una sola columna en móvil */
+        text-align: center;
+        gap: 5px;
+    }
+    .bank-label {
+        text-align: center;
+        margin-top: 15px;
+        font-size: 0.75rem;
+    }
+    .bank-value {
+        text-align: center;
+        font-size: 1.2rem;
+    }
+    .clabe-row {
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    .rsvp-form {
+        padding: 25px;
+    }
+    .rsvp-form::before {
+        top: -5px;
+        left: -5px;
+        right: -5px;
+        bottom: -5px;
+    }
+    .contact-card h3 {
+        font-size: 2rem;
+    }
+    .contact-card p {
+        font-size: 0.9rem;
+    }
+    .footer-tagline {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .landing-content {
+        padding: 60px 25px;
+    }
+    .couple-names {
+        font-size: 2.8rem;
+    }
+    .dove {
+        width: 55px;
+    }
+    .dove-left {
+        left: 8px;
+    }
+    .dove-right {
+        right: 8px;
+        width: 65px;
+    }
+    .subtitle {
+        font-size: 0.95rem;
+        letter-spacing: 2px;
+    }
+}
