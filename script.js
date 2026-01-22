@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
         
         // 4. Enviar usando Fetch (AJAX)
-        fetch('https://formsubmit.co/ajax/madebyslivermx@gmail.com', {
+        fetch('https://formsubmit.co/ajax/fbaezvaleria@gmail.com', {
             method: 'POST',
             headers: { 
                 'Content-Type': 'application/json',
@@ -251,5 +251,3 @@ function capitalizeName(name) {
         .join(' ');
 }
 
-// Debug Log
-console.log('Wedding script loaded successfully - Form configured for madebyslivermx@gmail.com');
